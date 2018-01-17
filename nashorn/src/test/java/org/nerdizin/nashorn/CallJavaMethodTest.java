@@ -17,7 +17,7 @@ public class CallJavaMethodTest {
 		final ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
 
 		final StringBuilder script = new StringBuilder();
-		script.append("var Utils = Java.type('Utils');");
+		script.append("var Utils = Java.type('org.nerdizin.nashorn.Utils');");
 		script.append("print(Utils.getSampleString())");
 
 		engine.eval(script.toString());
@@ -29,7 +29,7 @@ public class CallJavaMethodTest {
 		final ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
 
 		final StringBuilder script = new StringBuilder();
-		script.append("var Utils = Java.type('Utils');");
+		script.append("var Utils = Java.type('org.nerdizin.nashorn.Utils');");
 
 		script.append("Utils.printClass(123);");
 		script.append("Utils.printClass(123.45);");
@@ -48,7 +48,7 @@ public class CallJavaMethodTest {
 		final ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
 
 		final StringBuilder script = new StringBuilder();
-		script.append("var Utils = Java.type('Utils');");
+		script.append("var Utils = Java.type('org.nerdizin.nashorn.Utils');");
 
 		script.append("Utils.printValue({myKey: 'myValue', anotherKey: 123});");
 
@@ -65,10 +65,10 @@ public class CallJavaMethodTest {
 		engine.eval(new FileReader(file));
 
 		final StringBuilder script = new StringBuilder();
-		script.append("var Utils = Java.type('Utils');");
-		script.append("var animal = new Animal('Harambe');");
+		script.append("var Utils = Java.type('org.nerdizin.nashorn.Utils');");
+		script.append("var animal = new org.nerdizin.nashorn.Animal('Harambe');");
 
-		script.append("Utils.callMethod(animal);");
+		script.append("Utils.callMethod2(animal);");
 
 		engine.eval(script.toString());
 	}

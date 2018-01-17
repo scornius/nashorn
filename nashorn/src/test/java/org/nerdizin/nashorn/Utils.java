@@ -20,7 +20,11 @@ public class Utils {
 		System.out.println(mirror.getMember("myKey"));
 	}
 
+	public static void callMethod2(final Object o) {
+		System.out.println(o.toString());
+	}
+
 	public static void callMethod(final ScriptObjectMirror mirror) {
-		System.out.println(mirror.callMember("sayName"));
+		System.out.println(mirror.callMember("getName"));
 	}
 }
